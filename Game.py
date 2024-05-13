@@ -33,10 +33,10 @@ graphics = Graphics(win, board = environment.state.board)
 # player1 = Human_Agent(player=1)
 # player2 = Human_Agent(player=-1)
 # player2 = Fix_Agent(environment=environment,player=-1, train=True)
-# player2 = Random_Agent(player=-1)
+player2 = Random_Agent(player=-1)
 # player1 = Random_Agent(player=1)
 player1 = DQN_Agent(player=1, train=False)
-player2 = DQN_Agent(player=-1, train=False, R = True)
+# player2 = DQN_Agent(player=-1, train=False, R = True)
 # player2 = DQN_Agent(player=-1, train=False)
 # player2 = MinMaxAgent(player = -1,depth = 3, environment=environment)
 # player1 = MinMaxAgent(player = 1,depth = 3, environment=environment)
@@ -46,7 +46,6 @@ checkpoint_path = f"Data/checkpoint{File_Num}.pth"
 if os.path.exists(checkpoint_path):
     checkpoint = torch.load(checkpoint_path)
     player1.DQN.load_state_dict(checkpoint['model_state_dict'])
-    player2.DQN.load_state_dict(checkpoint['model_state_dict'])
 
 
 def main ():
