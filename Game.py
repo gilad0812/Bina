@@ -73,7 +73,7 @@ def switchPlayers(state):
 def GUI ():
     global player1, player2
     player1 = Human_Agent(player=1)
-    player2 = Human_Agent(player=2)
+    player2 = Human_Agent(player=-1)
     # player1 = Human_Agent(player=1)
     # player2 = Human_Agent(player=-1)
     # player2 = Fix_Agent(environment=environment,player=-1, train=True)
